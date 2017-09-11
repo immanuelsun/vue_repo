@@ -2,22 +2,16 @@ new Vue({
     el: '#app',
     data: {
         counter: 0,
-        x: 0,
-        y: 0
+        secondCounter: 0
+    },
+    computed: {
+        output: function() {
+            return this.counter > 5 ? 'Greater 5' : 'Smaller 5';
+        }
     },
     methods: {
-        increase: function(step, event) {
-            this.counter += step;
-        },
-        updateCoordinates: function(event) {
-            this.x = event.clientX;
-            this.y = event.clientY;
-        },
-        dummy: function() {
-            event.stopPropagation();
-        },
-        alertMe: function() {
-            alert('Alert!');
+        result() {
+            return this.counter > 5 ? 'Greater 5' : 'Smaller 5';
         }
     }
 });
