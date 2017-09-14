@@ -1,19 +1,13 @@
 new Vue({
     el: '#exercise',
     data: {
-        value: 0
+        myClass: true
     },
-    computed: {
-        result: function(value) {
-            return this.value == 37 ? 'We got it' : 'Try it again';
-        }
-    },
-    watch: {
-        result: function() {
-            var vm = this;
+    methods: {
+        startEffect: function() {
             setTimeout(function() {
-                vm.value = 0;
-            }, 2000)
+                this.myClass = true ? myClass = 'highlight' : myClass = 'shrink';
+            }, 3000);
         }
     }
 });
