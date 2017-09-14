@@ -1,15 +1,19 @@
 new Vue({
     el: '#exercise',
     data: {
-        value: ''
+        value: 0
     },
-    methods: {
-        alertMe: function() {
-            alert('Hi, you are alerted!');
-        },
-        downValue: function(event) {
-            this.value = event.target.value;
-        },
-
+    computed: {
+        result: function(value) {
+            return this.value == 37 ? 'We got it' : 'Try it again';
+        }
+    },
+    watch: {
+        result: function() {
+            var vm = this;
+            setTimeout(function() {
+                vm.value = 0;
+            }, 2000)
+        }
     }
 });
