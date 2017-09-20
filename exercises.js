@@ -36,3 +36,5 @@ new Vue({
         }
     }
 });
+
+// finished assignment 4 and section 2
